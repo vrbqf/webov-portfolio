@@ -1,0 +1,358 @@
+/* Reset a základní nastavení */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* HLAVIČKA */
+header {
+    background-color: #d8f2f2;
+    padding: 15px 20px;
+    position: relative;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+section {
+    margin: 60px 0;
+}
+
+h2 {
+    font-size: 2rem;
+    color: #1f5555;
+    margin-bottom: 20px;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+ul li {
+    margin-bottom: 10px;
+}
+
+
+.nav-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.logo {
+    height: 90px;
+}
+
+/* Navigace */
+.nav {
+    display: flex;
+    gap: 20px;
+}
+
+.nav a {
+    color: #163c3c;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 8px 12px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.nav a:hover,
+.nav a:focus {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Tlačítko menu pro mobil */
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 30px;
+    color: #163c3c;
+    cursor: pointer;
+}
+
+/* --- MOBILNÍ MENU --- */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 110px;
+        left: 0;
+        width: 100%;
+        background-color: #d8f2f2;
+        padding: 10px 0;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        border-top: 2px solid #d8f2f2;
+        z-index: 9999;
+    }
+
+    .nav.active {
+        display: flex;
+        animation: slideDown 0.8s ease forwards;
+    }
+
+    @keyframes slideDown {
+        from {opacity: 0; transform: translateY(-10px);}
+        to {opacity: 1; transform: translateY(0);}
+    }
+
+    .nav a {
+        text-align: center;
+        padding: 15px 0;
+        border-top: 1px solid rgba(255, 255, 255, 0.2);
+        font-size: 1.1rem;
+    }
+}
+
+/* HLAVNÍ SEKCÍ - ÚVOD */
+.hero {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    padding: 60px 20px;
+    background-color: #fff;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    border-radius: 12px;
+    max-width: 1200px;
+    margin: 40px auto;
+}
+
+.hero-flex {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    width: 100%;
+}
+
+.hero-text {
+    flex: 1 1 400px;
+    padding: 20px;
+}
+
+.hero-text h1 {
+    font-size: 2.8rem;
+    margin-bottom: 15px;
+    color: #1f5555;
+}
+
+.hero-text p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    line-height: 1.4;
+}
+
+.btn-primary {
+    display: inline-block;
+    background-color: #1f5555;
+    color: white;
+    text-decoration: none;
+    padding: 14px 30px;
+    border-radius: 30px;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 4px 8px rgb(22, 60, 60);
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+    background-color: #1f5555;
+    box-shadow: 0 6px 12px rgb(22, 60, 60);
+    outline: none;
+}
+
+.hero-image {
+    flex: 1 1 400px;
+    padding: 20px;
+    text-align: center;
+}
+
+.hero-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+/* SEKCE O MNE, SLUZBY, PROJEKTY, KONTAKT */
+.container {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+h2 {
+    color: #1f5555;
+    font-size: 2rem;
+    margin-bottom: 25px;
+    text-align: center;
+    font-weight: 700;
+}
+
+.about p,
+.services p,
+.contact p {
+    font-size: 1.1rem;
+    max-width: 700px;
+    margin: 0 auto 30px auto;
+    line-height: 1.5;
+    color: #555;
+    text-align: center;
+}
+
+/* SLUZBY */
+.services .service-list {
+    display: flex;
+    justify-content: space-around;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.services .service {
+    background-color: white;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+    padding: 20px;
+    border-radius: 12px;
+    flex: 1 1 280px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+}
+
+.services .service:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+}
+
+.services h3 {
+    color: #1f5555;
+    margin-bottom: 15px;
+}
+
+/* PORTFOLIO */
+.projects {
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.project {
+    margin-bottom: 40px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #d8f2f2;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+}
+
+.project-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.project h3 {
+    color: #1f5555;
+    margin-bottom: 10px;
+    font-size: 1.4rem;
+}
+
+.project p {
+    font-size: 1rem;
+    color: #163c3c;
+}
+
+
+/* KONTAKT */
+.contact a {
+    color: #1f5555;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.contact a:hover,
+.contact a:focus {
+    text-decoration: underline;
+}
+
+/* PATIČKA */
+footer {
+    background-color: #d8f2f2;
+    color: #1f5555;
+    text-align: center;
+    padding: 20px 10px;
+    font-size: 0.9rem;
+    margin-top: 60px;
+    box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
+}
+
+/* --- RESPONZIVNÍ ÚPRAVY --- */
+@media (max-width: 992px) {
+    .hero-text h1 {
+        font-size: 2.2rem;
+    }
+    .btn-primary {
+        padding: 12px 25px;
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero {
+        flex-direction: column-reverse;
+        text-align: center;
+        padding: 40px 20px;
+    }
+    .hero-flex {
+        flex-direction: column;
+    }
+    .hero-text, .hero-image {
+        flex: none;
+        padding: 0;
+    }
+    .hero-text h1 {
+        font-size: 1.8rem;
+        margin-bottom: 15px;
+    }
+    .hero-text p {
+        font-size: 1rem;
+        margin-bottom: 20px;
+    }
+    .projects .project-grid {
+        flex-direction: column;
+        gap: 20px;
+    }
+    .services .service-list {
+        flex-direction: column;
+        gap: 20px;
+    }
+    .services .service {
+        flex: none;
+        max-width: 100%;
+    }
+}
+
+/* Extra: pro lepší focus state a přístupnost */
+a:focus,
+button:focus {
+    outline: 3px solid #d8f2f2;
+    outline-offset: 2px;
+}
